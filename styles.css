@@ -14,6 +14,7 @@
     --radius-medium: 8px;
     --radius-small: 6px;
     --pixel-border: 4px solid var(--brand-dark);
+    --pixel-border-eingegeben: 4px solid var(--brand-mid);
     --panel-outline: inset -4px -4px 0 rgba(37, 57, 117, 0.1), inset 4px 4px 0 rgba(255, 255, 255, 0.95);
 }
 
@@ -351,6 +352,28 @@ body::after {
     color: #ffffff;
     box-shadow: 5px 5px 0 rgba(37, 57, 117, 0.26);
 }
+
+
+.eingegeben {
+
+    border: var(--pixel-border-eingegeben);
+    background: var(--brand-mid);
+    color: #ffffff;
+    box-shadow: 5px 5px 0 rgba(37, 57, 117, 0.26);
+
+display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+
+}
+
 
 .button-secondary {
     border: var(--pixel-border);
