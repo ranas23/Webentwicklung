@@ -41,8 +41,13 @@ function speichereIdee() {
     leereFormular();
 
     bearbeiteIndex = -1;
-    speichernButton.textContent = "Idee speichern";
+    speichernButton.textContent = "Idee gespeichert";
     speichernButton.className = "eingegeben";
+
+    setTimeout(function () {
+        speichernButton.textContent = "Idee speichern";
+        speichernButton.className = "button-primary";
+    }, 2000);
 
     console.log("Idee wurde gespeichert.");
     console.log(ideen);
@@ -65,6 +70,7 @@ function zeigeIdeen() {
         htmlText += '</div>';
         htmlText += '<div class="card-actions">';
         htmlText += '<button type="button" class="button-secondary card-button" id="bearbeiten' + i + '">Bearbeiten</button>';
+        htmlText += '<button type="button" class="button-secondary card-button" id="loeschen' + i + '">Löschen</button>';
         htmlText += '</div>';
         htmlText += '</article>';
     }
@@ -75,6 +81,11 @@ function zeigeIdeen() {
         let button = document.getElementById("bearbeiten" + i);
         button.addEventListener("click", function () {
             bearbeiteIdee(i);
+        });
+
+        let loeschenButton = document.getElementById("loeschen" + i);
+        loeschenButton.addEventListener("click", function () {
+            loescheIdee(i);
         });
     }
 }
@@ -90,6 +101,19 @@ function bearbeiteIdee(index) {
 
     speichernButton.textContent = "Idee aktualisieren";
     speichernButton.className = "button-primary";
+}
+
+function loescheIdee(index) {
+    ideen.splice(index, 1);
+    speichereIdeenImBrowser();
+    zeigeIdeen();
+
+    if (bearbeiteIndex === index) {
+        bearbeiteIndex = -1;
+        leereFormular();
+        speichernButton.textContent = "Idee speichern";
+        speichernButton.className = "button-primary";
+    }
 }
 
 function speichereIdeenImBrowser() {

@@ -353,12 +353,15 @@ body::after {
     box-shadow: 5px 5px 0 rgba(37, 57, 117, 0.26);
 }
 
+
 .eingegeben {
+
     border: var(--pixel-border-eingegeben);
     background: var(--brand-mid);
     color: #ffffff;
     box-shadow: 5px 5px 0 rgba(37, 57, 117, 0.26);
-    display: inline-flex;
+
+display: inline-flex;
     align-items: center;
     justify-content: center;
     min-height: 48px;
@@ -368,7 +371,9 @@ body::after {
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     text-transform: uppercase;
     letter-spacing: 0.06em;
+
 }
+
 
 .button-secondary {
     border: var(--pixel-border);
